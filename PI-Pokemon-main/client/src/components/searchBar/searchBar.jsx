@@ -35,7 +35,7 @@ export default function SearchBar() {
     return(
         <React.Fragment>
                 <form className='search-form' onSubmit={onSubmit}>
-                    <input name='name' className='search-input' value={state.name} type="text"  placeholder='name of pokemon...'  onChange={(e)=> onChange(e)}/>
+                    <input name='name' className='search-input' value={state.name} type="text"  placeholder='Search a pokemon...'  onChange={(e)=> onChange(e)}/>
                     <button type='submit'  className='search-button'>
                             <i className="fa-solid fa-magnifying-glass fa-2xl"></i>
                     </button>

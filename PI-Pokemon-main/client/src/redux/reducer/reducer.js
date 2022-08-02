@@ -55,7 +55,7 @@ const rootReducer = (state = initialState, action) => {
                     return 0
                 }) : (action.payload === "atk-asc") ?
                 state.pokemons.sort(function(a, b) { return a.attack - b.attack; }) :
-                state.pokemons.sort(function(a, b) { return b.attack - a.attack; })
+                (action.payload === "atk-des") ? state.pokemons.sort(function(a, b) { return b.attack - a.attack; }) : state.pokemons
             return {
                 ...state,
                 pokemons: sort,

@@ -52,7 +52,12 @@ export default function Home() {
     }
     const sortByName = (e) => {
         setState({...state,order:e.target.value});
-        dispatch(getSortedPokemon(e.target.value));
+        let aux = pokemons
+        if (e.target.value !== 'none') {
+            dispatch(getSortedPokemon(e.target.value));
+        }else if (e.target.value === 'none'){
+            dispatch(getAllPokemons());
+        }
     };
     // pagination----------------------------------------------------------------
     let paginado = filtered.slice(state.currentPage,state.currentPage + 12)
@@ -88,7 +93,7 @@ export default function Home() {
                     {types && types.map(type => <option key={type.id} value={type.name}>{type.name}</option>)}
                 </select>
                 <select name="order" onChange={e => {sortByName(e)}}>
-                    <option value="none">order:</option>
+                    <option value="none" >order:</option>
                     <option value="a-z">a-z</option>
                     <option value="z-a">z-a</option>
                     <option value="atk-asc">attack Asc</option>
