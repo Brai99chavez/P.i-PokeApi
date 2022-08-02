@@ -43,11 +43,11 @@ export default function Detail({match}) {
                         </div>
                         <br />
                         <div className="detail-type-icon">
-                            { (typeof poke.types === 'string' ? poke.types.split(',') : poke.types).map((t,i) => 
+                            { (poke.types || poke.Types).map((t,i) => 
                                         <img
                                             key={i}
                                             className='detail-type-icon'
-                                            src={typeIcons[`${t}.jpg`].default}
+                                            src={typeIcons[`${t.name}.jpg`].default}
                                             alt="type"
                                             height="30px"
                             />)}

@@ -25,25 +25,14 @@ export default function Card({id,img,name,type}) {
                             #{typeof id === 'string' ? 'UUID' : id}
                         </div>
                         <div className="pokemon-types">
-                        {(typeof type !== 'string')? type.map((t,i) => {
+                        {console.log(type)}
+                        {type && type.map((t,i) => {
                             
                             return (
                                 <img
                                 key={i}
                                 className='type-icon'
-                                src={typeIcons[`${t}.jpg`].default }
-                                alt="type"
-                                height="30px"
-                                />
-                            )
-                        } 
-                        ): type.split(',').map((t,i) => {
-                            
-                            return (
-                                <img
-                                key={i}
-                                className='type-icon'
-                                src={typeIcons[`${t}.jpg`].default }
+                                src={typeIcons[`${t.name}.jpg`].default }
                                 alt="type"
                                 height="30px"
                                 />

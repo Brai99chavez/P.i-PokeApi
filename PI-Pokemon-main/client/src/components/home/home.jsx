@@ -52,7 +52,7 @@ export default function Home() {
     }
     const sortByName = (e) => {
         setState({...state,order:e.target.value});
-        let aux = pokemons
+
         if (e.target.value !== 'none') {
             dispatch(getSortedPokemon(e.target.value));
         }else if (e.target.value === 'none'){
@@ -108,7 +108,7 @@ export default function Home() {
                 key={pokemon.id}
                 img={pokemon.img}
                 name= {pokemon.name}
-                type= {typeof pokemon.types !== 'string' ? pokemon.types : pokemon.types.split(',')}
+                type= { pokemon.Types || pokemon.types}
                 />
         ))}
         </div>

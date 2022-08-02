@@ -53,10 +53,6 @@ module.exports = (sequelize) => {
                 max: 255,
             },
         },
-        types: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
     });
 };
 //asd

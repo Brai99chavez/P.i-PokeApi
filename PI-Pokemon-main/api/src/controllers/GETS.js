@@ -10,7 +10,7 @@ async function getInfo(pokemon) {
         .then(p => {
             obj.id = p.data.id;
             obj.name = p.data.name;
-            obj.types = p.data.types.length > 1 ? [p.data.types[0].type.name, p.data.types[1].type.name] : [p.data.types[0].type.name];
+            obj.types = p.data.types.length > 1 ? [p.data.types[0].type, p.data.types[1].type] : [p.data.types[0].type];
             obj.health = p.data.stats[0].base_stat;
             obj.attack = p.data.stats[1].base_stat;
             obj.defense = p.data.stats[2].base_stat;
@@ -26,7 +26,13 @@ async function getInfo(pokemon) {
 async function getAllPokes() {
     let pokemons_1 = await axios.get(`${PATH}/pokemon`);
     let pokemons_2 = await axios.get(pokemons_1.data.next);
-    let pokemons_db = await Pokemon.findAll();
+    let pokemons_db = await Pokemon.findAll({
+        include: {
+            model: Type,
+            attributes: ['name'],
+            through: { attributes: [] },
+        }
+    })
     let pokemonsApi = pokemons_1.data.results.concat(pokemons_2.data.results)
     pokemonsApi = await Promise.all(pokemonsApi.map(p => getInfo(p)));
     return (pokemonsApi).concat(pokemons_db)

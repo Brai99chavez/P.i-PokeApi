@@ -91,16 +91,16 @@ export default function CreatePokemon() {
                 "weight": state.weight,
                 "attack": state.attack,
                 "defense": state.defense,
-                "hp": state.hp,
+                "health": state.hp,
                 "speed": state.speed,
-                "types": ''
+                "types": []
             }
             if (state.type_1 && state.type_2) {
-                pokeNew.types =`${state.type_1},${state.type_2}`;
+                pokeNew.types =[state.type_1,state.type_2];
             }else if (state.type_1){
-                pokeNew.types= state.type_1;
+                pokeNew.types= [state.type_1];
             }else if (state.type_2){
-                pokeNew.types= state.type_2;
+                pokeNew.types= [state.type_2];
             }   
                 dispatch(postNewPokemon(pokeNew))
                 history.push(`/home`);

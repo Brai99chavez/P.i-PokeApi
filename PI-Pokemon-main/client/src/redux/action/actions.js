@@ -59,18 +59,8 @@ export const loading = () => {
 export const postNewPokemon = (data) => {
     return async function(dispatch) {
         dispatch({ type: LOADING })
-        let poke = {
-            "name": data.name,
-            "height": data.height,
-            "weight": data.weight,
-            "health": data.hp,
-            "attack": data.attack,
-            "speed": data.speed,
-            "defense": data.defense,
-            "types": data.types
-        }
-        console.log(poke.type)
-        await axios.post('http://localhost:3001/pokemons', poke)
+
+        await axios.post('http://localhost:3001/pokemons', data)
 
         .then(function(response) {
                 dispatch(dispatch({ type: POST_NEW_POKEMON, payload: data }))
