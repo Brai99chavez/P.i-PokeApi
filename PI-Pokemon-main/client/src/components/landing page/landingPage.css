@@ -13,10 +13,12 @@
 
 .join {
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
+    padding: 10px;
     background: transparent;
     border: none;
     font-size: 1.5em;
     text-align: 3em;
-    border-bottom: 2px solid black;
+    background-color: rgb(33, 33, 33);
+    border-radius: 20px;
 }

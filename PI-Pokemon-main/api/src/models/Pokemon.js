@@ -21,7 +21,7 @@ module.exports = (sequelize) => {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        healt: {
+        health: {
             type: DataTypes.INTEGER,
             allowNull: false,
             valite: {

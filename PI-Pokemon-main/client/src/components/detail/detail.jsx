@@ -56,7 +56,7 @@ export default function Detail({match}) {
                     <div className='poke-stats'>
                         <h2>Stats</h2>
                         <div className='poke-stat'>
-                            <p>hp:</p> <p> {poke.health}</p>
+                            <p>hp:</p> <p> {poke.health  }</p>
                         </div>
                         <div className='poke-stat'>
                             <p>attack:</p> <p> {poke.attack}</p>

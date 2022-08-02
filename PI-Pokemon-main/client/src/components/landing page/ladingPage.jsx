@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import "./landingPage.css"
 
-export default class ladingPage extends Component {
-    render(){
+
+export default function ladingPage() {
         return(
             <React.Fragment>
                 <div className='title-container'>
@@ -11,8 +11,7 @@ export default class ladingPage extends Component {
                     <br />
                     <Link to="/home" className='join'> Join to Pokedex</Link>
                 </div>
-                
             </React.Fragment>
         )
-    }
 }
+

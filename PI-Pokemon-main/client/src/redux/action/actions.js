@@ -63,7 +63,7 @@ export const postNewPokemon = (data) => {
             "name": data.name,
             "height": data.height,
             "weight": data.weight,
-            "healt": data.hp,
+            "health": data.hp,
             "attack": data.attack,
             "speed": data.speed,
             "defense": data.defense,
