@@ -1,0 +1,81 @@
+.filters-container {
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.filters {
+    background-color: rgb(40, 39, 39);
+    display: flex;
+    width: max-content;
+    padding: 2em;
+    border-radius: 30px;
+}
+
+.filters select {
+    margin: 0.3em;
+}
+
+.filters form {
+    margin: 0.3em;
+}
+
+.cards-container {
+    align-items: center;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 5fr));
+    grid-gap: 20px;
+}
+
+.pagination {
+    text-align: center;
+    padding: 10px;
+}
+
+.pagination button {
+    background-color: rgb(40, 39, 39);
+    border-radius: 20px;
+    padding: 1em;
+    color: white;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #9b193cc4;
+}
+
+.show-error {
+    display: block;
+}
+
+.show-error div {
+    margin: auto;
+    border-radius: 20px;
+    font-size: small;
+    color: white;
+    max-width: max-content;
+    background-color: rgba(40, 39, 39, 0.592);
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .cards-container {
+        grid-template-columns: repeat(3, minmax(150px, 5fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .filters {
+        display: block;
+    }
+    .cards-container {
+        grid-template-columns: repeat(2, minmax(150px, 5fr));
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .cards-container {
+        grid-template-columns: repeat(1, minmax(150px, 5fr));
+    }
+}

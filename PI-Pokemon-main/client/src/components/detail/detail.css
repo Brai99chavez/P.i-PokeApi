@@ -1,0 +1,56 @@
+.detail-container {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center
+}
+
+.detail {
+    display: flex;
+    background-color: rgb(36, 36, 36);
+    border-radius: 20px;
+    width: 50%;
+    padding: 10px;
+}
+
+.poke-details {
+    text-align: center;
+    border-radius: 20px;
+    color: black;
+    min-height: 23em;
+    width: 50%;
+}
+
+.poke-details h2 {
+    color: white;
+}
+
+.poke-details .detail-image img {
+    width: 300px;
+    height: 300px;
+}
+
+.detail-type-icon img {
+    width: 2em;
+    height: 2em;
+}
+
+.poke-stats {
+    border-radius: 20px;
+    color: black;
+    min-height: 23em;
+    background-color: blanchedalmond;
+    width: 50%;
+}
+
+.poke-stats h2 {
+    margin-left: 30px;
+}
+
+.poke-stats .poke-stat {
+    display: flex;
+}
+
+.poke-stats .poke-stat p {
+    margin-left: 30px;
+    font-size: 1em;
+}

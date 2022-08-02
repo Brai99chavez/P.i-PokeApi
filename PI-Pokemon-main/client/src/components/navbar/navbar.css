@@ -1,0 +1,35 @@
+.navbar {
+    display: flex;
+    display: flexbox;
+    justify-content: space-between;
+    background-color: rgb(35, 35, 35);
+}
+
+.navbar img {
+    width: 200px;
+}
+
+.btns .btn {
+    color: white;
+    text-decoration: none;
+    margin: 1em;
+    padding: 1em;
+    align-self: center;
+}
+
+.btns .btn:hover {
+    background-color: #9b193b;
+    color: white;
+    border-radius: 20px;
+}
+
+.btns {
+    display: flex;
+    margin-right: 2em;
+}
+
+@media screen and (max-width: 460px) {
+    .navbar {
+        display: block;
+    }
+}

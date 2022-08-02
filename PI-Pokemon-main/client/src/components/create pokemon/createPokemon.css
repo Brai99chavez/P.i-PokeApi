@@ -1,0 +1,54 @@
+.show-error {
+    display: block;
+}
+
+.show-error p {
+    margin: auto;
+    border-radius: 20px;
+    font-size: small;
+    color: rgb(255, 0, 0);
+    max-width: max-content;
+    background-color: rgba(40, 39, 39, 0.592);
+    text-align: center;
+}
+
+.create-container {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-form {
+    border-radius: 20px;
+    padding: 1em;
+    max-width: max-content;
+    color: white;
+    background-color: rgb(32, 32, 32);
+}
+
+.create-form h3 {
+    text-align: center;
+}
+
+.create-title {}
+
+.create-all-inputs {}
+
+.create-input {
+    width: 30em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.create-input input {
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+.create-input select {
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+.create-input p {}
