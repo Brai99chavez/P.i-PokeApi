@@ -8,7 +8,7 @@
     display: flex;
     background-color: rgb(36, 36, 36);
     border-radius: 20px;
-    width: 50%;
+    width: max-content;
     padding: 10px;
 }
 
@@ -17,7 +17,7 @@
     border-radius: 20px;
     color: black;
     min-height: 23em;
-    width: 50%;
+    width: max-content;
 }
 
 .poke-details h2 {
@@ -27,7 +27,7 @@
 .poke-details .detail-image img {
     display: block;
     width: 250px;
-    height: 250px;
+    height: 300px;
     margin: auto;
 }
 
@@ -38,10 +38,9 @@
 
 .poke-stats {
     border-radius: 20px;
-    color: black;
+    color: rgb(255, 255, 255);
     min-height: 23em;
-    background-color: blanchedalmond;
-    width: 50%;
+    width: max-content;
 }
 
 .poke-stats h2 {

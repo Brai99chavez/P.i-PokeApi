@@ -33,29 +33,8 @@ export default function Detail({ match }) {
       {poke && (
         <div className="detail-container">
           <div className="detail">
-            <div className="poke-details">
-              <h2>{poke.name}</h2>
-              <div className="detail-image">
-                <img
-                  src={typeof poke.id !== "string" ? poke.img : imgDefault}
-                  alt=""
-                />
-              </div>
-              <br />
-              <div className="detail-type-icon">
-                {(poke.types || poke.Types).map((t, i) => (
-                  <img
-                    key={i}
-                    className="detail-type-icon"
-                    src={typeIcons[`${t.name}.jpg`].default}
-                    alt="type"
-                    height="30px"
-                  />
-                ))}
-              </div>
-            </div>
             <div className="poke-stats">
-              <h2>Stats</h2>
+              <h2>{poke.name}</h2>
               <div className="poke-stat">
                 <p>hp:</p> <p> {poke.health}</p>
               </div>
@@ -75,6 +54,26 @@ export default function Detail({ match }) {
               <div className="poke-stat">
                 <p>SpDefense:</p>{" "}
                 <p> {poke.spDefense ? poke.spDefense : "-"}</p>
+              </div>
+            </div>
+            <div className="poke-details">
+              <div className="detail-image">
+                <img
+                  src={typeof poke.id !== "string" ? poke.img : imgDefault}
+                  alt=""
+                />
+              </div>
+              <br />
+              <div className="detail-type-icon">
+                {(poke.types || poke.Types).map((t, i) => (
+                  <img
+                    key={i}
+                    className="detail-type-icon"
+                    src={typeIcons[`${t.name}.jpg`].default}
+                    alt="type"
+                    height="30px"
+                  />
+                ))}
               </div>
             </div>
           </div>
