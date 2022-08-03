@@ -39,31 +39,45 @@ export default function Home() {
         ? p.types.some((t) => t.name === state.typeFilter)
         : p.Types.some((t) => t.name === state.typeFilter)
     );
+    if (state.currentPage !== 0) {
+      setState({ ...state, currentPage: 0 });
+    }
   }
   if (state.otherFilters !== "none") {
     switch (state.otherFilters) {
       case "existing":
         filtered = filtered.filter((p) => typeof p.id !== "string");
+        break;
+      case "created":
+        filtered = filtered.filter((p) => typeof p.id === "string");
         if (state.currentPage !== 0) {
           setState({ ...state, currentPage: 0 });
         }
         break;
-      case "created":
-        filtered = filtered.filter((p) => typeof p.id === "string");
-        break;
       case "atk>50":
         filtered = filtered.filter((p) => p.attack > 50);
+        if (state.currentPage !== 0) {
+          setState({ ...state, currentPage: 0 });
+        }
         break;
       case "atk<50":
         filtered = filtered.filter((p) => p.attack < 50);
+        if (state.currentPage !== 0) {
+          setState({ ...state, currentPage: 0 });
+        }
         break;
       case "hp<60":
         filtered = filtered.filter((p) => p.health < 50);
+        if (state.currentPage !== 0) {
+          setState({ ...state, currentPage: 0 });
+        }
         break;
       case "hp>60":
         filtered = filtered.filter((p) => p.health > 50);
+        if (state.currentPage !== 0) {
+          setState({ ...state, currentPage: 0 });
+        }
         break;
-
       default:
         break;
     }
