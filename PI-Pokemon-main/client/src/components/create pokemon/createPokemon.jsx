@@ -20,6 +20,8 @@ export default function CreatePokemon() {
     type_2: "",
     height: 1,
     weight: 1,
+    spAttack: 1,
+    spDefense: 1,
     change: false,
   });
   const [errors, setErrors] = useState({});
@@ -78,6 +80,12 @@ export default function CreatePokemon() {
     if (state.height < 1 || state.height > 255) {
       errors.error_height = "insert a value between 1-255";
     }
+    if (state.spDefense < 1 || state.spDefense > 255) {
+      errors.error_spDefense = "insert a value between 1-255";
+    }
+    if (state.spAttack < 1 || state.spAttack > 255) {
+      errors.error_spAttack = "insert a value between 1-255";
+    }
 
     return errors;
   }
@@ -99,6 +107,8 @@ export default function CreatePokemon() {
         defense: state.defense,
         health: state.hp,
         speed: state.speed,
+        spAttack: state.spAttack,
+        spDefense: state.spDefense,
         types: [],
       };
       if (state.type_1 && state.type_2) {
@@ -229,6 +239,34 @@ export default function CreatePokemon() {
           {errors.error_defense && (
             <div className="show-error">
               <p>{errors.error_defense}</p>
+            </div>
+          )}
+          <div className="create-input">
+            <p>spAttack: </p>
+            <input
+              type="number"
+              name="spAttack"
+              value={state.spAttack}
+              onChange={(e) => onChange(e)}
+            />
+          </div>
+          {errors.error_spAttack && (
+            <div className="show-error">
+              <p>{errors.error_spAttack}</p>
+            </div>
+          )}
+          <div className="create-input">
+            <p>spDefense: </p>
+            <input
+              type="number"
+              name="spDefense"
+              value={state.spDefense}
+              onChange={(e) => onChange(e)}
+            />
+          </div>
+          {errors.error_spDefense && (
+            <div className="show-error">
+              <p>{errors.error_spDefense}</p>
             </div>
           )}
 

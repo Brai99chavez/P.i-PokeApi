@@ -107,6 +107,8 @@ export default function Home() {
             <option value="z-a">z-a</option>
             <option value="atk-asc">attack Asc</option>
             <option value="atk-des">attack Des</option>
+            <option value="atk>50"> attack {">"} 50</option>
+            <option value="hp<60"> health {"<"} 60</option>
           </select>
         </div>
       </div>

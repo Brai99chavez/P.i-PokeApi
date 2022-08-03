@@ -14,7 +14,9 @@ async function getInfo(pokemon) {
             obj.health = p.data.stats[0].base_stat;
             obj.attack = p.data.stats[1].base_stat;
             obj.defense = p.data.stats[2].base_stat;
-            obj.speed = p.data.stats[3].base_stat;
+            obj.speed = p.data.stats[5].base_stat;
+            obj.spAttack = p.data.stats[3].base_stat;
+            obj.spDefense = p.data.stats[4].base_stat;
             obj.height = p.data.height;
             obj.weight = p.data.weight;
             obj.img = p.data.sprites.other.dream_world.front_default
