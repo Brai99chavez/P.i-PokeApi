@@ -14,7 +14,7 @@ export default function Home() {
   const [state, setState] = useState({
     currentPage: 0,
     typeFilter: "none",
-    apiOrDbFilter: "none",
+    otherFilters: "none",
     order: "none",
     change: false,
   });
@@ -40,17 +40,29 @@ export default function Home() {
         : p.Types.some((t) => t.name === state.typeFilter)
     );
   }
-  if (state.apiOrDbFilter !== "none") {
-    if (state.apiOrDbFilter === "existing") {
-      filtered = filtered.filter((p) => typeof p.id !== "string");
-    } else {
-      if (state.currentPage !== 0) {
-        setState({ ...state, currentPage: 0 });
-      }
-      filtered = filtered.filter((p) => typeof p.id === "string");
+  if (state.otherFilters !== "none") {
+    switch (state.otherFilters) {
+      case "existing":
+        filtered = filtered.filter((p) => typeof p.id !== "string");
+        if (state.currentPage !== 0) {
+          setState({ ...state, currentPage: 0 });
+        }
+        break;
+      case "created":
+        filtered = filtered.filter((p) => typeof p.id === "string");
+        break;
+      case "atk>50":
+        filtered = filtered.filter((p) => p.attack > 50);
+        break;
+      case "hp<60":
+        filtered = filtered.filter((p) => p.health > 50);
+        break;
+
+      default:
+        break;
     }
   }
-  const sortByName = (e) => {
+  function sortByName(e) {
     setState({ ...state, order: e.target.value });
 
     if (e.target.value !== "none") {
@@ -58,7 +70,7 @@ export default function Home() {
     } else if (e.target.value === "none") {
       dispatch(getAllPokemons());
     }
-  };
+  }
   // pagination----------------------------------------------------------------
   let paginado = filtered.slice(state.currentPage, state.currentPage + 12);
   function nextPage() {
@@ -82,10 +94,12 @@ export default function Home() {
       <div className="filters-container">
         <div className="filters">
           <SearchBar />
-          <select name="apiOrDbFilter" onChange={(e) => onChange(e)}>
-            <option value="none">api or db:</option>
+          <select name="otherFilters" onChange={(e) => onChange(e)}>
+            <option value="none">Other Filters:</option>
             <option value="existing">existing</option>
             <option value="created">created</option>
+            <option value="atk>50"> attack {">"} 50</option>
+            <option value="hp<60"> health {"<"} 60</option>
           </select>
           <select name="typeFilter" onChange={(e) => onChange(e)}>
             <option value="none">choose type:</option>
@@ -107,8 +121,6 @@ export default function Home() {
             <option value="z-a">z-a</option>
             <option value="atk-asc">attack Asc</option>
             <option value="atk-des">attack Des</option>
-            <option value="atk>50"> attack {">"} 50</option>
-            <option value="hp<60"> health {"<"} 60</option>
           </select>
         </div>
       </div>

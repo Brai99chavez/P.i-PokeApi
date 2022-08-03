@@ -64,12 +64,6 @@ const rootReducer = (state = initialState, action) => {
                 case "atk-des":
                     sort = state.pokemons.sort(function(a, b) { return b.attack - a.attack; })
                     break;
-                case "atk>50":
-                    sort = state.pokemons.filter(p => p.attack > 50)
-                    break;
-                case "hp<60":
-                    sort = state.pokemons.filter(p => p.health < 60)
-                    break;
                 default:
                     sort = state.pokemons
                     break;
