@@ -55,6 +55,12 @@ export default function Detail({ match }) {
                 <p>SpDefense:</p>{" "}
                 <p> {poke.spDefense ? poke.spDefense : "-"}</p>
               </div>
+              <div className="poke-stat">
+                <p>weight:</p> <p> {poke.weight ? poke.weight : "-"}</p>
+              </div>
+              <div className="poke-stat">
+                <p>height:</p> <p> {poke.height ? poke.height : "-"}</p>
+              </div>
             </div>
             <div className="poke-details">
               <div className="detail-image">

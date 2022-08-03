@@ -78,6 +78,12 @@ export default function Home() {
           setState({ ...state, currentPage: 0 });
         }
         break;
+      case "weight>500":
+        filtered = filtered.filter((p) => p.weight > 500);
+        if (state.currentPage !== 0) {
+          setState({ ...state, currentPage: 0 });
+        }
+        break;
       default:
         break;
     }
@@ -115,13 +121,14 @@ export default function Home() {
         <div className="filters">
           <SearchBar />
           <select name="otherFilters" onChange={(e) => onChange(e)}>
-            <option value="none">Other Filters:</option>
+            <option value="none">Filters:</option>
             <option value="existing">existing</option>
             <option value="created">created</option>
             <option value="atk>50"> attack {">"} 50</option>
             <option value="atk<50"> attack {"<"} 50</option>
             <option value="hp<60"> health {"<"} 60</option>
             <option value="hp>60"> health {">"} 60</option>
+            <option value="weight>500"> weight {">"} 500</option>
           </select>
           <select name="typeFilter" onChange={(e) => onChange(e)}>
             <option value="none">choose type:</option>
