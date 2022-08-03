@@ -54,7 +54,13 @@ export default function Home() {
       case "atk>50":
         filtered = filtered.filter((p) => p.attack > 50);
         break;
+      case "atk<50":
+        filtered = filtered.filter((p) => p.attack < 50);
+        break;
       case "hp<60":
+        filtered = filtered.filter((p) => p.health < 50);
+        break;
+      case "hp>60":
         filtered = filtered.filter((p) => p.health > 50);
         break;
 
@@ -62,7 +68,7 @@ export default function Home() {
         break;
     }
   }
-  function sortByName(e) {
+  function sort(e) {
     setState({ ...state, order: e.target.value });
 
     if (e.target.value !== "none") {
@@ -99,7 +105,9 @@ export default function Home() {
             <option value="existing">existing</option>
             <option value="created">created</option>
             <option value="atk>50"> attack {">"} 50</option>
+            <option value="atk<50"> attack {"<"} 50</option>
             <option value="hp<60"> health {"<"} 60</option>
+            <option value="hp>60"> health {">"} 60</option>
           </select>
           <select name="typeFilter" onChange={(e) => onChange(e)}>
             <option value="none">choose type:</option>
@@ -110,12 +118,7 @@ export default function Home() {
                 </option>
               ))}
           </select>
-          <select
-            name="order"
-            onChange={(e) => {
-              sortByName(e);
-            }}
-          >
+          <select name="order" onChange={(e) => sort(e)}>
             <option value="none">order:</option>
             <option value="a-z">a-z</option>
             <option value="z-a">z-a</option>

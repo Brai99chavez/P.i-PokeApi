@@ -52,10 +52,6 @@ export const getSortedPokemon = (sorted) => {
     return { type: GET_SORTED_POKEMONS, payload: sorted }
 }
 
-export const loading = () => {
-    return { type: LOADING }
-}
-
 export const postNewPokemon = (data) => {
     return async function(dispatch) {
         dispatch({ type: LOADING })
