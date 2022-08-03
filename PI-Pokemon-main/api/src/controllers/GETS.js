@@ -1,6 +1,5 @@
 const axios = require('axios');
-const { response } = require('express');
-const e = require('express');
+
 const PATH = 'https://pokeapi.co/api/v2';
 const { Pokemon, Type } = require('../db')
 
@@ -88,4 +87,4 @@ async function getPokemonsById(req, res) {
 }
 
 
-module.exports = { getTypes, get_All_Pokemons_or_By_Name, getPokemonsById };
+module.exports = { getTypes, get_All_Pokemons_or_By_Name, getPokemonsById, getAllPokes };
