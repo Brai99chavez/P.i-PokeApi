@@ -1,5 +1,3 @@
-const axios = require('axios');
-const PATH = 'https://pokeapi.co/api/v2';
 const { Pokemon, Type } = require('../db')
 const { getAllPokes } = require('./GETS')
 

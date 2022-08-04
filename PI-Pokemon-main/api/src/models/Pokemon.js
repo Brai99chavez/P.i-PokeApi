@@ -37,6 +37,14 @@ module.exports = (sequelize) => {
                 max: 255,
             },
         },
+        defense: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            valite: {
+                min: 0,
+                max: 255,
+            },
+        },
         speed: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -61,14 +69,7 @@ module.exports = (sequelize) => {
                 max: 255,
             },
         },
-        defense: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            valite: {
-                min: 0,
-                max: 255,
-            },
-        },
+
     });
 };
 //asd

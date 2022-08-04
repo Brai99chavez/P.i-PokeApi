@@ -71,7 +71,7 @@ async function get_All_Pokemons_or_By_Name(req, res) {
             res.json(pokemons);
         }
     } catch (error) {
-        res.send(error);
+        res.status(400).send(error);
     }
 }
 
