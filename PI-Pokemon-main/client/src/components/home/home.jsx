@@ -92,7 +92,7 @@ export default function Home() {
       <div className="filters-container">
         <div className="filters">
           <SearchBar />
-          <select name="otherFilters" onChange={(e) => onChange(e)}>
+          <select class="round" name="otherFilters" onChange={(e) => onChange(e)}>
             <option value="none">Filters:</option>
             <option value="existing">existing</option>
             <option value="created">created</option>

@@ -12,7 +12,7 @@ const LOADING = 'LOADING';
 export const getAllPokemons = () => {
     return async function(dispatch) {
         dispatch({ type: LOADING })
-        await axios.get('http://localhost:3001/pokemons')
+        await axios.get('/pokemons')
             .then(response => response.data)
             .then(data => dispatch({ type: GET_ALL_POKEMONS, payload: data }))
     }
@@ -21,7 +21,7 @@ export const getAllPokemons = () => {
 export const getAllTypes = () => {
     return async function(dispatch) {
         dispatch({ type: LOADING })
-        await axios.get('http://localhost:3001/types')
+        await axios.get('/types')
             .then(response => response.data)
             .then(data => dispatch({ type: GET_ALL_TYPES, payload: data }))
     }
@@ -30,7 +30,7 @@ export const getAllTypes = () => {
 export const getPokemonById = (id) => {
     return async function(dispatch) {
         dispatch({ type: LOADING })
-        await axios.get(`http://localhost:3001/pokemons/${id}`)
+        await axios.get(`/pokemons/${id}`)
             .then(response => response.data)
             .then(data => dispatch({ type: GET_POKEMON_BY_ID, payload: data }))
     }
@@ -41,7 +41,7 @@ export const getPokemonByName = (name) => {
     return function(dispatch) {
         dispatch({ type: LOADING })
         let a = new Promise((resolve, reject) => {
-            resolve(axios.get(`http://localhost:3001/pokemons?name=${n}`))
+            resolve(axios.get(`/pokemons?name=${n}`))
         })
         dispatch({ type: GET_POKEMON_BY_NAME, payload: a.data })
     }
@@ -57,7 +57,7 @@ export const getSortedPokemon = (sorted) => {
 export const postNewPokemon = (data) => {
     return async function(dispatch) {
         dispatch({ type: LOADING })
-        await axios.post('http://localhost:3001/pokemons', data)
+        await axios.post('/pokemons', data)
             .then(function(response) {
                 dispatch(dispatch({ type: POST_NEW_POKEMON, payload: data }))
                 console.log(response);
