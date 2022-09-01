@@ -99,7 +99,7 @@ export default function Home() {
           </select>
           <select name="typeFilter" onChange={(e) => onChange(e)}>
             <option value="none">choose type:</option>
-            {types &&
+            {types.length &&
               types.map((type) => (
                 <option key={type.id} value={type.name}>
                   {type.name}
