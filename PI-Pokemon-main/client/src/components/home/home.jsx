@@ -33,7 +33,7 @@ export default function Home() {
     setState({ ...state, [e.target.name]: e.target.value });
   }
   //filter and sort-------------------------------------------------------------
-  let filtered = pokemons;
+  let filtered = pokemons.length ? pokemons : [];
   if (state.typeFilter !== "none") {
     filtered = pokemons.filter((p) =>
       p.types
@@ -70,7 +70,7 @@ export default function Home() {
     }
   }
   // pagination fix----------------------------------------------------------------
-  let paginado = filtered.slice(state.currentPage, state.currentPage + 12);
+  let paginado = filtered.length? filtered.slice(state.currentPage, state.currentPage + 12) : [];
   function nextPage() {
     if (state.currentPage < filtered.length - 12) {
       setState({ ...state, currentPage: state.currentPage + 12 });
@@ -117,7 +117,7 @@ export default function Home() {
       </div>
       
       <div className="cards-container">
-        {paginado.length > 0 && paginado.map((pokemon) => (
+        { paginado.length && paginado.map((pokemon) => (
           <Card
             id={pokemon.id}
             key={pokemon.id}
