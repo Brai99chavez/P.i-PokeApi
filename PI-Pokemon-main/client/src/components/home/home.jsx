@@ -33,7 +33,7 @@ export default function Home() {
     setState({ ...state, [e.target.name]: e.target.value });
   }
   //filter and sort-------------------------------------------------------------
-  let filtered = pokemons.length ? pokemons : [];
+  let filtered = pokemons.length ? pokemons : null;
   if (state.typeFilter !== "none") {
     filtered = pokemons.filter((p) =>
       p.types
@@ -70,7 +70,7 @@ export default function Home() {
     }
   }
   // pagination fix----------------------------------------------------------------
-  let paginado = filtered.length? filtered.slice(state.currentPage, state.currentPage + 12) : [];
+  let paginado = filtered.length? filtered.slice(state.currentPage, state.currentPage + 12) : null;
   function nextPage() {
     if (state.currentPage < filtered.length - 12) {
       setState({ ...state, currentPage: state.currentPage + 12 });
