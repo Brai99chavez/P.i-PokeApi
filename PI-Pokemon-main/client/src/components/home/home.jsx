@@ -69,7 +69,7 @@ export default function Home() {
       dispatch(getAllPokemons());
     }
   }
-  // pagination----------------------------------------------------------------
+  // pagination fix----------------------------------------------------------------
   let paginado = filtered.slice(state.currentPage, state.currentPage + 12);
   function nextPage() {
     if (state.currentPage < filtered.length - 12) {
@@ -115,6 +115,7 @@ export default function Home() {
           </select>
         </div>
       </div>
+      
       <div className="cards-container">
         {paginado.length && paginado.map((pokemon) => (
           <Card
