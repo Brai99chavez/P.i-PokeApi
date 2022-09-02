@@ -117,7 +117,7 @@ export default function Home() {
       </div>
       
       <div className="cards-container">
-        {paginado.length && paginado.map((pokemon) => (
+        {paginado.length > 0 && paginado.map((pokemon) => (
           <Card
             id={pokemon.id}
             key={pokemon.id}
